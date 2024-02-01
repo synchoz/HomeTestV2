@@ -1,0 +1,124 @@
+﻿.hidden {
+    display: none;
+}
+
+.sortable {
+    cursor: pointer;
+}
+
+td {
+    border-style:none!important;
+}
+
+.sortable.desc::after {
+    content: "▼";
+    color: currentcolor;
+    font-size: 100%;
+    top: 0;
+}
+
+.sortable.asc::after {
+    content: "▲";
+    color: currentcolor;
+    font-size: 100%;
+    top: 0;
+}
+
+button.active {
+    background: grey
+}
+
+tbody > tr:nth-child(even) {
+    background-color: #f0ecec;
+}
+
+.pagination > button.active {
+    color: white;
+    background-color: #007bff;
+    border: none;
+    padding: 4px 9px;
+    margin: 3px 3px;
+    font-weight: bold;
+}
+
+.pagination > .btnLink:not(.active) {
+    background: none;
+    border: none;
+    color: blue;
+    padding: 4px 9px;
+    margin: 3px 3px;
+    font-weight: bold;
+}
+
+.pagination > button:not(.active) {
+    color: blue;
+    background-color: white;
+}
+.menuIcon {
+    background: blue;
+    border-radius: 10px;
+    max-height: 60px;
+}
+.tableIcon {
+    width: 30px;
+    height: 30px;
+    border-radius: 33%;
+}
+
+.hamburgerIcon {
+    width: 56px;
+    height: 56px;
+}
+
+.headerIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.hoverEnlargePointer:hover {
+    transform: scale(1.2);
+    cursor:pointer;
+}
+
+.deleteIcon {
+    background: red;
+}
+
+.editIcon, .searchIcon, .xIcon {
+    background: blue;
+}
+
+.companyIcon {
+    width: 125px;
+    height: 60px;
+}
+
+.pageLinks {
+    background: blue;
+    width: fit-content;
+    border-radius: 20px;
+    padding: 10px 30px;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fontHeader {
+    font-size: 26px;
+    color: #35749c;
+}
+
+.pageInfo {
+    margin-left: 5px;
+}
+
+.sup {
+    position: relative;
+    font-size: 0.75em;
+    line-height: 0;
+    vertical-align: baseline;
+    color: red;
+    top: -3px;
+    padding-right: 2px;
+}

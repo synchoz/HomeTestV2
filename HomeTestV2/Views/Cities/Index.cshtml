@@ -1,0 +1,71 @@
+﻿@model IEnumerable<HomeTestV2.Models.City>
+
+@{
+    ViewBag.Title = "רשימת ישובים";
+}
+
+<div class="accessabilityIconHolder"></div>
+
+<div class="header d-flex align-items-center">
+    <div class="menuIcon rounded-md-2 rounded-lg-3 d-flex align-items-center hoverEnlargePointer">
+        <img class="hamburgerIcon p-1" src="~/Content/Images/hamburger.png" />
+    </div>
+    <div class="pageLinks d-flex text-white fw-bold mx-2">
+        <div class="customersIcon hoverEnlargePointer ms-1"><img class="headerIcon p-1" src="~/Content/Images/CustomerIcon.png" />לקוחות</div>
+        <div class="tablesIcon hoverEnlargePointer ms-1"><img class="headerIcon p-1" src="~/Content/Images/GraphIcon.png" />טבלאות</div>
+        <div class="disconnectIcon hoverEnlargePointer"><img class="headerIcon p-1" src="~/Content/Images/ExitIcon.png" />התנתק</div>
+    </div>
+    <div class="companyLogo me-auto d-flex align-items-center">
+        <img class="companyIcon p-1" src="~/Content/Images/companyLogo.png" />
+    </div>
+</div>
+<div class="row fontHeader fw-bold">
+    <div class="col-6">ישובים</div>
+    <div class="col-6">ממשק אדמין</div>
+</div>
+
+<table class="table js_tableList fw-bold">
+    <thead>
+        <tr style="background-color:#504c4c;">
+            <th class="sortable text-center">
+                @Html.DisplayNameFor(model => model.Name)<span class="sup">*</span>
+            </th>
+            <th></th>
+            <th class="text-center">
+                <a href="@Url.Action("Create")" title="יצירה">
+                    <img class="tableIcon hoverEnlargePointer createIcon p-1" src="~/Content/Images/add.png" />
+                </a>
+        </tr>
+        <tr>
+            <td style="width:30%;"><input class="border rounded-pill pe-2 w-100" type="text" id="searchInput" onkeyup="searchFunc(event)" placeholder="" /></td>
+            <td style="width:60%"></td>
+            <td class="d-flex align-items-center justify-content-center w-100">
+                <img class="tableIcon searchIcon p-1 ms-1" src="~/Content/Images/SearchIcon.png" />
+                <img class="tableIcon xIcon p-1" src="~/Content/Images/XIcon.png" />
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="tableBodyRow">
+                <td style="width:30%;" class="nameValue text-center">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td style="width:60%"></td>
+                <td style="width:100%;" class="d-flex align-items-center justify-content-center">
+                    <a href="@Url.Action("Edit", new { id = item.Id })" title="עריכה" class="ms-1">
+                        <img class="tableIcon hoverEnlargePointer editIcon p-1" src="~/Content/Images/pen.png" />
+                    </a>
+                    <a href="@Url.Action("Delete", new { id = item.Id })" title="מחיקה">
+                        <img class="tableIcon hoverEnlargePointer deleteIcon p-1" src="~/Content/Images/delete.png" />
+                    </a>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="paginationContainer fw-bold d-flex align-items-center" dir="ltr">
+    Pages:
+</div>
